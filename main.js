@@ -31,8 +31,7 @@ function displaySlides() {
 
     slides.forEach((slide, index )=> {  // There are less slides than gallery items
         // Display images starting at the front of the gallery
-        const img = slide.querySelector('img');
-        img.src = gallery[index];
+        slide.src = gallery[index];
     });
 }
 
