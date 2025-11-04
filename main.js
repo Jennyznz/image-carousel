@@ -11,10 +11,22 @@ gallery = [
     './assets/frog10.jpeg',
 ];
 
+let timer;
+
+const player = document.getElementById('player');
+player.addEventListener('click', () => {
+    timer = setInterval(nextSlide, 1000);
+});
+
+const pauser = document.getElementById('pauser');
+pauser.addEventListener('click', () => {
+    clearInterval(timer);
+});
+
 displaySlides();
 
 function displaySlides() {
-    const carousel = document.getElementById('img-carousel');
+    const carousel = document.getElementById('slide-container');
     const slides = document.querySelectorAll('.slide');
 
     slides.forEach((slide, index )=> {  // There are less slides than gallery items

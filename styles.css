@@ -1,12 +1,15 @@
 #img-carousel {
     --img-carousel-width: 90vw;
-
+    position: relative;
     width: var(--img-carousel-width);
+}
+
+#slide-container {
+    width: 100%git ;
     height: 30vh;
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    position: relative;
 }
 
 img {
@@ -53,3 +56,4 @@ img {
     height: 10px;
     width: auto;
 }
+
