@@ -35,20 +35,18 @@ body {
 }
 
 #slide-container {
-    width: 80%; 
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
     gap: 5px;
 }
 
 .slide {
-    --slide-width: calc(var(--img-carousel-width) / 5);
-
     object-fit: cover;
     border-radius: 30px;
-    width: var(--slide-width);
-    height: calc(var(--slide-width) * 0.8)
+    width: 100%;
+    height: calc(calc(var(--img-carousel-width) / 5) * 0.8)
 }
 
 #scroll-container {
