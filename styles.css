@@ -1,15 +1,17 @@
 #img-carousel {
-    width: 90vw;
+    --img-carousel-width: 90vw;
+
+    width: var(--img-carousel-width);
     height: 30vh;
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-
+    position: relative;
 }
 
 img {
     --img-width: 100%;
-    --img-height: 90%;
+    --img-height: 200px;
 
     width: var(--img-width);
     height: var(--img-height);
@@ -35,4 +37,19 @@ img {
 
 .arrow#right {
     right: 20px;
+}
+
+#dot-container {
+    display: flex;
+    height: 20px;
+    width: auto;
+
+    position: absolute;
+    bottom: 20px;
+    left: calc(var(--img-carousel-width) / 2);
+}
+
+#dot-container img {
+    height: 10px;
+    width: auto;
 }

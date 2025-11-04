@@ -18,6 +18,7 @@ function displaySlides() {
     const slides = document.querySelectorAll('.slide');
 
     slides.forEach((slide, index )=> {  // There are less slides than gallery items
+        // Display images starting at the front of the gallery
         const img = slide.querySelector('img');
         img.src = gallery[index];
     });
@@ -34,6 +35,7 @@ function prevSlide() {
     gallery.unshift(last);
 
     displaySlides();
+    prevDot();
 }
 
 const nextBtn = document.getElementById('right');
@@ -47,4 +49,54 @@ function nextSlide() {
     gallery.push(first);
 
     displaySlides();
+    nextDot();
+}
+
+function prevDot() {
+    const dotContainer = document.getElementById('dot-container');
+    const allDots = dotContainer.querySelectorAll('img');
+
+    for (let i = 0; i < allDots.length; i++) {
+        if (allDots[i].src.includes('circle.svg')) {
+            allDots[i].src = './assets/circle-outline.svg';
+
+            // Shift "current" dot
+            if (i > 0) {
+                const nextDot = allDots[i - 1];
+                nextDot.src = './assets/circle.svg';
+
+            // Loop to last element
+            } else if (i === 0) {
+                const nextDot = allDots[allDots.length - 1];
+                nextDot.src = './assets/circle.svg';
+            }
+            break;
+        }
+    }
+}
+
+function nextDot() {
+    const dotContainer = document.getElementById('dot-container');
+    const allDots = dotContainer.querySelectorAll('img');
+
+    for (let i = 0; i < allDots.length; i++) {
+        if (allDots[i].src.includes('circle.svg')) {
+            allDots[i].src = './assets/circle-outline.svg';
+
+            const endOfArr = allDots.length - 1;
+
+
+            // Shift "current" dot
+            if (i < endOfArr) {
+                const nextDot = allDots[i + 1];
+                nextDot.src = './assets/circle.svg';
+
+            // Loop to first element
+            } else if (i === endOfArr) {
+                const nextDot = allDots[0];
+                nextDot.src = './assets/circle.svg';
+            }
+            break;
+        }
+    }
 }
