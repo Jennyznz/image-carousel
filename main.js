@@ -15,7 +15,7 @@ let timer;
 
 const player = document.getElementById('player');
 player.addEventListener('click', () => {
-    timer = setInterval(nextSlide, 1000);
+    timer = setInterval(nextSlide, 500);
 });
 
 const pauser = document.getElementById('pauser');

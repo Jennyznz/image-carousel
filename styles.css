@@ -1,3 +1,12 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: lightgoldenrodyellow;
+}
+
 #img-carousel {
     --img-carousel-width: 90vw;
     position: relative;
@@ -5,20 +14,22 @@
 }
 
 #slide-container {
-    width: 100%git ;
+    width: 100%;
     height: 30vh;
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
 }
 
-img {
+.image {
     --img-width: 100%;
     --img-height: 200px;
 
     width: var(--img-width);
     height: var(--img-height);
     object-fit: cover;
+    border-radius: 30px;
 }
 
 .arrow-slide {
@@ -32,6 +43,7 @@ img {
     height: var(--arrow-height);
     top: calc(var(--img-height) / 2 - calc(var(--arrow-height) / 2));
     z-index: 1;
+    margin-top: 10px;
 }
 
 .arrow#left {
@@ -48,7 +60,8 @@ img {
     width: auto;
 
     position: absolute;
-    bottom: 20px;
+    bottom: 0px;
+    
     left: calc(var(--img-carousel-width) / 2);
 }
 
@@ -57,3 +70,21 @@ img {
     width: auto;
 }
 
+#player, #pauser {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0px;
+}
+
+#player-icon, #pauser-icon {
+    width: 20px;
+    height: auto;
+}
+
+#controller-container {
+    display: flex;
+    gap: 20px;
+    justify-content: start;
+    margin-bottom: 20px;
+}
